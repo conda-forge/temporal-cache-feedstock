@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.7
     - frozendict >=1.2
-    - six >=1.13.0
+    - tzlocal>=2.0.0
 
 test:
   imports:
