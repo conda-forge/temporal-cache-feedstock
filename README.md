@@ -5,9 +5,13 @@ Home: http://github.com/timkpaine/temporal-cache
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/temporal-cache-feedstock/blob/master/LICENSE.txt)
 
 Summary: Time-based cache invalidation
+
+Development: https://github.com/timkpaine/temporal-cache
+
+Documentation: https://temporal-cache.readthedocs.io
 
 Time-based cache invalidation
 

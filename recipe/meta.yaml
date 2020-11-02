@@ -1,5 +1,5 @@
 {% set name = "temporal-cache" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7a71d68537f1f51991adcdba2ad79cf0f9d78d1b26f14090ce56054d18ef2c78
+  sha256: 6427397ff4126017a83f3838cfcbf2254fae51284ec4550e81547881b1df1d43
 
 build:
   number: 0
