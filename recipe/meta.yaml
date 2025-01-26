@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: ad26a9b11d40fd168dec79890ab44ddf63ded6a37d500263454ffac7b6bdf224
 
 build:
@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python >=3.7
-    - pip
+    - python {{ python_min }}
+    - hatchling
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - frozendict >=1.2
     - six >=1.13.0
     - tzlocal >=2.0.0
@@ -27,6 +27,10 @@ requirements:
 test:
   imports:
     - temporalcache
+  requires:
+    - python {{ python_min }}
+  commands:
+    - pip check
 
 about:
   home: http://github.com/timkpaine/temporal-cache
