@@ -22,6 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - frozendict >=1.2
+    - pytz
     - six >=1.13.0
     - tzlocal >=2.0.0
 
