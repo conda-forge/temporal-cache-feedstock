@@ -1,0 +1,53 @@
+schema_version: 1
+
+context:
+  name: temporal-cache
+  version: "0.1.6"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: ad26a9b11d40fd168dec79890ab44ddf63ded6a37d500263454ffac7b6bdf224
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ==${{ python_min }}
+    - pip
+    - hatchling
+  run:
+    - python >=${{ python_min }}
+    - frozendict >=1.2
+    - pytz
+    - six >=1.13.0
+    - tzlocal >=2.0.0
+
+tests:
+  - python:
+      imports:
+        - temporalcache
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Time-based cache invalidation
+  description: |
+    Time-based cache invalidation
+  homepage: http://github.com/timkpaine/temporal-cache
+  repository: https://github.com/timkpaine/temporal-cache
+  documentation: https://temporal-cache.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - timkpaine
